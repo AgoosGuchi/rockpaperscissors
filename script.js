@@ -29,8 +29,6 @@ function game(){
             playerCount++;
         } else if(result.startsWith("You lose")) {
             computerCount++;
-        } else if ( playerSelection === computerSelection){
-        }
         console.log("Round " + ( i+1 ) + " : " + result);
     }
 }
