@@ -1,4 +1,5 @@
 const options = ["Rock","Paper","Scissors"];
+const message = alert("Let's Play Rock, paper, scissors! Choose your option:")
 
 function computerPlay() {
     let random = options[Math.floor(Math.random() * options.length)];
@@ -23,6 +24,7 @@ var computerCount = 0;
 
 function game(){
     for (let i = 0; i < 5; i++){
+        message;
         const playerSelection = prompt("Rock, Paper or Scissors?");
         const computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
