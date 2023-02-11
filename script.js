@@ -1,5 +1,6 @@
 const options = ["Rock","Paper","Scissors"];
 const message = alert("Let's Play Rock, paper, scissors! Choose your option:")
+
 function computerPlay() {
     let random = options[Math.floor(Math.random() * options.length)];
     return random;
