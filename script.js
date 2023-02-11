@@ -1,6 +1,5 @@
 const options = ["rock","paper","scissors"];
-const message = alert("Let's Play Rock, paper, scissors! Choose your option:")
-
+const message = alert("Let's Play Rock, paper, scissors! \nChoose your option:")
 function computerPlay() {
     let random = options[Math.floor(Math.random() * options.length)];
     return random;
@@ -38,7 +37,21 @@ function userChoice(){
     return selection;
 }
 
+function matchResult(){
+    if (playerCount < computerCount) {
+        console.log("You lost the match. Computer wins with " + computerCount + " points")
+    } else if (playerCount > computerCount) {
+        console.log("You win the match with " + playerCount + " points")
+    } else {
+        console.log("The match its tied!")
+    };
+}
+
 function game(){
+    if (playerCount > 0 && computerCount > 0 ) {
+        playerCount = 0;
+        computerCount = 0;
+    }
     for (let i = 0; i < 5; i++){
         let playerSelection = userChoice()
         let computerSelection = computerPlay()
@@ -50,25 +63,7 @@ function game(){
         }
         console.log("Round " + ( i+1 ) + " : " + result);
     }
-}
-function matchResult(){
-    console.log("Final Score: Player " + playerCount + " Computer " + computerCount);
-    if (playerCount < computerCount) {
-        console.log("You lost the match. Computer wins with " + computerCount + " points")
-    } else if (playerCount > computerCount) {
-        console.log("You win the match with " + playerCount + " points")
-    } else {
-        console.log("The match its tied!")
-    };
-    console.log("If you want to play again type replay() in the console")
-}
-function replay(){
-    playerCount = 0;
-    computerCount = 0;
-    game();
     matchResult();
 }
 
-message;
 game();
-matchResult();
