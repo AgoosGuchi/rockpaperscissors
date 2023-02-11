@@ -1,5 +1,5 @@
 const options = ["Rock","Paper","Scissors"];
-
+const message = alert("Let's Play Rock, paper, scissors! Choose your option:")
 function computerPlay() {
     let random = options[Math.floor(Math.random() * options.length)];
     return random;
@@ -9,9 +9,7 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()){
         return "It's a tie!";
     }
-    else if (playerSelection.toLowerCase() === "Rock" && computerSelection.toLowerCase() === "Scissors"
-    || playerSelection.toLowerCase() === "Paper" && computerSelection.toLowerCase() === "Rock"
-    || playerSelection.toLowerCase() === "Scissors" && computerSelection.toLowerCase() === "Paper"){
+    else if (playerSelection.toLowerCase() === "Rock" && computerSelection.toLowerCase() === "Scissors"  || playerSelection.toLowerCase() === "Paper" && computerSelection.toLowerCase() === "Rock" || playerSelection.toLowerCase() === "Scissors" && computerSelection.toLowerCase() === "Paper"){
         return "You win! " + playerSelection + " beats " + computerSelection;
     } else {
         return "You lose! " + computerSelection + " beats " + playerSelection;
@@ -35,6 +33,7 @@ function game(){
     }
 
 }
+message;
 game()
 
 console.log("Final Score: Player " + playerCount + " Computer " + computerCount);
