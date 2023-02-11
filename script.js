@@ -10,9 +10,11 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()){
         return "It's a tie!";
     }
-    else if (playerSelection.toLowerCase() === "Rock" && computerSelection.toLowerCase() === "Scissors"  || playerSelection.toLowerCase() === "Paper" && computerSelection.toLowerCase() === "Rock" || playerSelection.toLowerCase() === "Scissors" && computerSelection.toLowerCase() === "Paper"){
+    else if (playerSelection.toLowerCase() === "Rock" && computerSelection.toLowerCase() === "Scissors"
+    || playerSelection.toLowerCase() === "Paper" && computerSelection.toLowerCase() === "Rock"
+    || playerSelection.toLowerCase() === "Scissors" && computerSelection.toLowerCase() === "Paper"){
         return "You win! " + playerSelection + " beats " + computerSelection;
-    } else {
+    } else if(computerSelection.toLowerCase() === "Rock" && playerSelection.toLowerCase() === "Scissors"  || computerSelection.toLowerCase() === "Paper" && playerSelection.toLowerCase() === "Rock" || computerSelection.toLowerCase() === "Scissors" && playerSelection.toLowerCase() === "Paper"){
         return "You lose! " + computerSelection + " beats " + playerSelection;
     }
 }
@@ -29,11 +31,11 @@ function game(){
             playerCount++;
         } else if(result.startsWith("You lose")) {
             computerCount++;
-        } else if ( playerSelection === computerSelection){
         }
         console.log("Round " + ( i+1 ) + " : " + result);
     }
 }
+
 message;
 game()
 
@@ -46,4 +48,3 @@ if (playerCount < computerCount) {
 } else {
     console.log("The match its tied!")
 };
-
