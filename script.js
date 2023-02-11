@@ -17,8 +17,8 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-var playerCount = 0;
-var computerCount = 0;
+let playerCount = 0;
+let computerCount = 0;
 
 function game(){
     for (let i = 0; i < 5; i++){
@@ -29,6 +29,7 @@ function game(){
             playerCount++;
         } else if(result.startsWith("You lose")) {
             computerCount++;
+        }
         console.log("Round " + ( i+1 ) + " : " + result);
     }
 }
